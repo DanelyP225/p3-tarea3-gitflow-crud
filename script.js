@@ -1,6 +1,12 @@
 const addBtn = document.getElementById("addBtn");
 const taskInput = document.getElementById("taskInput");
 const taskList = document.getElementById("taskList");
+const taskCounter = document.getElementById("taskCounter");
+
+function actualizarContador() {
+    taskCounter.textContent =
+        "Total de tareas: " + taskList.children.length;
+}
 
 addBtn.addEventListener("click", () => {
 
@@ -37,6 +43,7 @@ addBtn.addEventListener("click", () => {
 
     deleteBtn.addEventListener("click", () => {
         li.remove();
+        actualizarContador();
     });
 
     li.appendChild(taskText);
@@ -44,5 +51,9 @@ addBtn.addEventListener("click", () => {
 
     taskList.appendChild(li);
 
+    actualizarContador();
+
     taskInput.value = "";
 });
+
+actualizarContador();

@@ -102,3 +102,10 @@ input:focus{
 #taskList button:hover{
     opacity:0.9;
 }
+
+#taskCounter{
+    text-align:center;
+    font-weight:bold;
+    color:#555;
+    margin-bottom:15px;
+}
