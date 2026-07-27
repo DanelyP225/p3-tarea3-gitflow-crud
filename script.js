@@ -6,30 +6,41 @@ addBtn.addEventListener("click", () => {
 
     const task = taskInput.value;
 
-    if(task === ""){
+    if (task === "") {
         alert("Debes escribir una tarea");
         return;
     }
 
     const li = document.createElement("li");
 
-    li.textContent = task;
+    const taskText = document.createElement("span");
+    taskText.textContent = task;
 
-    li.addEventListener("click", () => {
+    taskText.addEventListener("click", () => {
 
         const nuevaTarea = prompt(
             "Editar tarea:",
-            li.textContent
+            taskText.textContent
         );
 
-        if(
+        if (
             nuevaTarea !== null &&
             nuevaTarea.trim() !== ""
-        ){
-            li.textContent = nuevaTarea;
+        ) {
+            taskText.textContent = nuevaTarea;
         }
 
     });
+
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "Eliminar";
+
+    deleteBtn.addEventListener("click", () => {
+        li.remove();
+    });
+
+    li.appendChild(taskText);
+    li.appendChild(deleteBtn);
 
     taskList.appendChild(li);
 
