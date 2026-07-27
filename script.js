@@ -2,6 +2,7 @@ const addBtn = document.getElementById("addBtn");
 const taskInput = document.getElementById("taskInput");
 const taskList = document.getElementById("taskList");
 const taskCounter = document.getElementById("taskCounter");
+const clearBtn = document.getElementById("clearBtn");
 
 function actualizarContador() {
     taskCounter.textContent =
@@ -57,3 +58,11 @@ addBtn.addEventListener("click", () => {
 });
 
 actualizarContador();
+
+clearBtn.addEventListener("click", () => {
+
+    taskList.innerHTML = "";
+
+    actualizarContador();
+
+});
