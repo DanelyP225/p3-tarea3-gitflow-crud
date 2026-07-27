@@ -15,6 +15,22 @@ addBtn.addEventListener("click", () => {
 
     li.textContent = task;
 
+    li.addEventListener("click", () => {
+
+        const nuevaTarea = prompt(
+            "Editar tarea:",
+            li.textContent
+        );
+
+        if(
+            nuevaTarea !== null &&
+            nuevaTarea.trim() !== ""
+        ){
+            li.textContent = nuevaTarea;
+        }
+
+    });
+
     taskList.appendChild(li);
 
     taskInput.value = "";
