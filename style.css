@@ -65,6 +65,16 @@ input:focus{
     transition:0.3s;
 }
 
+#clearBtn{
+    background:#e74c3c;
+    color:white;
+    border:none;
+    border-radius:10px;
+    padding:12px 20px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
 #addBtn:hover{
     transform:translateY(-2px);
 }
