@@ -23,7 +23,11 @@ addBtn.addEventListener("click", () => {
     const taskText = document.createElement("span");
     taskText.textContent = task;
 
-    taskText.addEventListener("click", () => {
+    const editBtn = document.createElement("button");
+    editBtn.textContent = "Editar";
+    editBtn.classList.add("edit-btn");
+
+    editBtn.addEventListener("click", () => {
 
         const nuevaTarea = prompt(
             "Editar tarea:",
@@ -41,13 +45,18 @@ addBtn.addEventListener("click", () => {
 
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Eliminar";
+    deleteBtn.classList.add("delete-btn");
 
     deleteBtn.addEventListener("click", () => {
+
         li.remove();
+
         actualizarContador();
+
     });
 
     li.appendChild(taskText);
+    li.appendChild(editBtn);
     li.appendChild(deleteBtn);
 
     taskList.appendChild(li);
@@ -55,9 +64,8 @@ addBtn.addEventListener("click", () => {
     actualizarContador();
 
     taskInput.value = "";
-});
 
-actualizarContador();
+});
 
 clearBtn.addEventListener("click", () => {
 
@@ -66,3 +74,5 @@ clearBtn.addEventListener("click", () => {
     actualizarContador();
 
 });
+
+actualizarContador();
